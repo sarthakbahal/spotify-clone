@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Macondo+Swash+Caps&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto", serif;
+    font-style: normal;
+    
+}
+
+
+body{
+    /* background-color: rgba(0, 0, 0, 0.805);
+    color: whitesmoke; */ 
+}
+
+.left{
+    width: 30vw;
+}
+
+.right{
+    width: 70vw;
+}
+
+.home ul li{
+    width: 30px;
+    list-style: none;
+    display: flex;
+    margin: 8px;
+    margin-bottom: 15px;
+    gap: 4px;
+    align-items: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+.home .logo img{
+    width: 150px;
+    margin: 20px;
+}
+
+.home ul{
+    margin: 10px 25px;
+}
+
+.home{
+    margin: 10px;
+    padding: 3px;
+
+}
+
+.library{
+    margin: 10px;
+    padding: 3px;
+
+}
+
+.library ul li{
+    width: 35px;
+    list-style: none;
+    display: flex;
+    margin: 8px;
+    margin-bottom: 15px;
+    gap: 6px;
+    align-items: center;
+    font-weight: bold;
+    font-size: large;
+    
+}
+
+.library ul{
+    margin: 10px 25px;
+}
+
