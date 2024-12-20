@@ -12,6 +12,7 @@
 body{
     background-color: rgba(0, 0, 0, 0.805);
     color: whitesmoke;  
+    overflow-x: hidden;
 }
 
 .left{
@@ -20,6 +21,7 @@ body{
 
 .right{
     width: 70vw;
+    position: relative;
 }
 
 .home ul li{
@@ -117,6 +119,8 @@ body{
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 70vh;
 }
 
 .card{
@@ -141,4 +145,95 @@ body{
     width: 40px;
     opacity: 0;
     transition: all 1s ease-out;
+}
+
+
+/* For webkit-based browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, black, #dab6fc); /* Gradient thumb */
+    border-radius: 6px; /* Rounded corners */
+}
+  
+::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #e9d9fd, #f0f0f0); /* Light background for the track */
+    border-radius: 6px; /* Rounded corners */
+}
+  
+  /* Optional: Hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #dab6fc, black); /* Invert the gradient on hover */
+}
+  
+.buttons > *{
+    margin: 0px 12px;
+}
+
+.signup{
+    font-weight: bold;
+    background-color: #1f1924;
+    color: rgba(255, 255, 255, 0.679);
+    border-width: opx;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 30px;
+    width: 80px;
+    padding: 10px;
+    
+}
+
+.signup:hover{
+    background-color: #bd92e53e ;
+    color: #f0f0f0;
+    font-size: 16px;
+}
+
+.login{
+    font-weight: bold;
+    background-color: #bd92e513;
+    color: rgba(255, 255, 255, 0.679);
+    
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    
+    width: 70px;
+    padding: 10px;
+    border-radius: 30px;
+    background: #dab6fcb4;
+    
+}
+
+.login:hover{
+    background-color: #bd92e5d3 ;
+    color: #f0f0f0;
+    font-size: 16px;
+}
+
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to right, #c693f5, #b09dff);
+    
+    width: 100%;
+    padding: 20px;
+}
+
+.playbtn{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    object-fit: contain;
+}
+
+.playbtn img{
+    width: 35px;
+    object-fit: contain;
 }

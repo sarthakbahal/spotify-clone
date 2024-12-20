@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <!-- Circle Background -->
+  <circle cx="12" cy="12" r="10" fill="black" />
+  <!-- Inner Arrows -->
+  <path d="M15.707 8.293a1 1 0 0 0-1.414 0l-3 3a1 1 0 0 0 0 1.414l3 3a1 1 0 0 0 1.414 0l.083-.094a1 1 0 0 0-.083-1.32L13.415 12l2.292-2.293a1 1 0 0 0 0-1.414z" fill="#dab6fc" />
+  <path d="M11.707 8.293a1 1 0 0 0-1.414 0l-3 3a1 1 0 0 0 0 1.414l3 3a1 1 0 0 0 1.414 0l.083-.094a1 1 0 0 0-.083-1.32L9.415 12l2.292-2.293a1 1 0 0 0 0-1.414z" fill="#dab6fc" />
+</svg>
