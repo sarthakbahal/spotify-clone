@@ -1,30 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="utility.css">
-        <meta charset="UTF-8">
-        <title>Musicfy</title>
-    </head>
-    <body>
-        <div class="container flex bg-bl">
-            <div class="left">
-                <div class="home rounded bg-pr">
-                    <div class="logo">
-                        <img src="logo.svg">
-                    </div>
-                    <ul>
-                        <li><img class="invert" src="home.svg">Home</li>
-                        <li><img class="invert" src="search.svg">Search</li>
-                    </ul>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="utility.css">
+    <meta charset="UTF-8">
+    <title>Musicfy</title>
+</head>
+
+<body>
+    <div class="container flex bg-bl">
+        <div class="left">
+            <div class="home rounded bg-pr">
+                <div class="logo">
+                    <img src="logo.svg">
                 </div>
-                <div class="library rounded bg-pr">
-                    <ul>
-                        <li><img class="invert" src="lib.svg">Your Library</li>
-                    </ul>
+                <ul>
+                    <li><img class="invert" src="home.svg">Home</li>
+                    <li><img class="invert" src="search.svg">Search</li>
+                </ul>
+            </div>
+            <div class="library rounded bg-pr">
+
+                <div class="heading">
+                    <img class="invert" src="lib.svg">
+                    <h2>Your Library</h2>
+                </div>
+
+                <div class="footer">
+
+
+                    <a href="https://www.spotify.com/in-en/legal/">Legal</a>
+                    <a href="https://www.spotify.com/in-en/safetyandprivacy/">Safety &amp; Privacy Center</a>
+                    <a href="https://www.spotify.com/in-en/legal/privacy-policy/">Privacy Policy</a>
+                    <a href="https://www.spotify.com/in-en/legal/cookies-policy/">Cookies</a>
+                    <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">About Ads</a>
+                    <a href="https://www.spotify.com/in-en/accessibility/">Accessibility</a>
+
+
+
                 </div>
             </div>
-            <div class="right bg-bl"> </div>
         </div>
-    </body>
+
+        <div class="right rounded bg-pr "> 
+            <div class="header">
+                
+                <div class="nav">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M15 6l-6 6l6 6" />
+                    </svg>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 6l6 6l-6 6" />
+                    </svg>
+                    
+                </div>
+
+                <div class="buttons">
+                    <button class="signup">Sign Up</button>
+                    <button class="login">Log in</button>
+                </div>
+            </div>
+
+            <div class="playlist">
+                <h2>Added Playlists</h2>
+                <div class="cardContainer">
+                    <div class="card">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="48" viewBox="0 0 48 48">
+                                <!-- Circle with full color -->
+                                <circle cx="24" cy="24" r="24" fill="#dab6fc" />
+                                <!-- Smaller and Centered Triangle -->
+                                <path d="M20 16v16a1 1 0 0 0 1.524 .852l12 -8a1 1 0 0 0 0 -1.704l-12 -8a1 1 0 0 0 -1.524 .852z" fill="black" />
+                            </svg>
+                              
+                        </div>
+                        <img src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1n6IJz-default.jpg" alt="atif aslam photo">
+
+                        <h3>This is Atif Aslam</h3>
+                        <p>This is Atif Aslam. The essential tracks, all in one playlist.</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1n6IJz-default.jpg" alt="atif aslam photo">
+
+                        <h3>This is Atif Aslam</h3>
+                        <p>This is Atif Aslam. The essential tracks, all in one playlist.</p>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+</body>
+
 </html>
