@@ -8,18 +8,36 @@ async function getsongs() {
     let songs = [];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
-        if(element.href.endsWith(".mp3")){
-             songs.push(element.href);   
+        if (element.href.endsWith(".mp3")) {
+            songs.push(element.href.split("/songs/")[1]);
+            console.log(element.href.split("/songs/")[1]);
+            
         }
-        
+
     }
     return songs;
 
 }
 
 async function main() {
-    let songs = await getsongs();
-   
+    let songs1 = await getsongs();
+    
+    let songUl = document.querySelector(".listcard").getElementsByTagName("ul")[0];
+    for (let song of songs1) {
+        
+        songUl.innerHTML = songUl.innerHTML + `<li>
+                            <img src="music.svg" alt="music">
+                            <div class="info">
+                                <div>${song.replaceAll("%20"," ")}</div>
+                                <div>Artist Name</div>
+                            </div>
+                            <div class="playnow">
+                                Play now
+                                <img src="play.svg" alt="play">
+                            </div>
+                        </li>`;
+    }
+
 
     var audio = new Audio(songs[0]);
     /*audio.play(); */
