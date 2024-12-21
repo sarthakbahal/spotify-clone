@@ -237,3 +237,41 @@ body{
     width: 35px;
     object-fit: contain;
 }
+
+.listcard{
+   
+}
+
+.listcard ul{
+   margin-left: 20px;
+}
+
+.listcard ul li {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    align-items: center;
+}
+
+.listcard img {
+    width: 40px;
+}
+
+.playnow{
+    display: flex;
+    margin-left: 50px;
+    align-items: center;
+    gap: 8px;
+    background-color: #b287db69 ;
+    padding: 5px;
+    padding-left: 13px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.playnow:hover{
+    background-color: #bd92e5d3 ;
+    color: #f0f0f0;
+    font-size: 16px;
+}

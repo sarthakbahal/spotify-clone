@@ -19,7 +19,16 @@ async function getsongs() {
 
 async function main() {
     let songs = await getsongs();
-    console.log(songs)
+   
+
+    var audio = new Audio(songs[0]);
+    /*audio.play(); */
+
+    /* audio.addEventListener("loadeddata",() =>{
+        let duration = audio
+    }) */
+
+
 }
 
-main();
+main();   
