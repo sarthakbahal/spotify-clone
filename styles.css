@@ -245,6 +245,7 @@ body{
    max-height: 52vh;
    max-width: 412px;
    
+   
 }
 
 .listcard ul{
@@ -257,7 +258,7 @@ body{
     display: flex;
     gap: 10px;
     padding: 15px;
-    
+    cursor: pointer;
     align-items: center;
     border-radius: 10px;
     margin: 5px 0px;
@@ -323,17 +324,7 @@ body{
     
 }
 
-/* .circle{
-    height: 11px;
-    width: 11px;
-    border: 2px solid white;
-    border-radius: 15px;
-    background: white;
-    position: relative;
-    bottom: 6px;
-    left: 0%;
-    transition: left 0.8s;
-} */
+
 
 
 .song-slider {
@@ -391,4 +382,8 @@ body{
 /* Add hover effect */
 .song-progress:hover::-webkit-slider-thumb {
     transform: scale(1.2); /* Enlarges thumb on hover */
+}
+
+.playbtn img{
+    cursor: pointer;
 }

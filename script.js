@@ -1,4 +1,5 @@
 let currsong = new Audio();
+console.log(currsong);
 async function getsongs() {
     let x = await fetch("http://127.0.0.1:5500/songs/")
     let response = await x.text();
@@ -23,6 +24,7 @@ async function getsongs() {
 const playMusic = (track) =>{
     currsong.src = "/songs/" + track;
     currsong.play();
+    play.src = "pause.svg";
 }
 
 
@@ -47,12 +49,7 @@ async function main() {
 
 
    
-    /*audio.play(); */
-
-    /* audio.addEventListener("loadeddata",() =>{
-        let duration = audio
-    }) */
-
+   
 
     Array.from(document.querySelector(".listcard").getElementsByTagName("li")).forEach(e=> {
         e.addEventListener("click", element=>{
@@ -62,6 +59,19 @@ async function main() {
         })
         
     })
+
+    play.addEventListener("click", ()=> {
+       
+        if (currsong.paused) {
+            currsong.play();
+            play.src = "pause.svg";
+        }else{
+            currsong.pause();
+            play.src = "play.svg";
+
+        }
+    })
+
 
 }
 
