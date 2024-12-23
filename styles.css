@@ -309,3 +309,86 @@ body{
     text-overflow: ellipsis; /* Add ellipsis for overflowing text */
     flex-grow: 1; /* Allow the name to take available space */
 }
+
+.seekbar{
+   /* height: 2px;
+    width: 92%;
+    border: 2px solid black;
+    border-radius: 10px; */
+    position: absolute;
+    bottom: 8px;
+    width: 92%;
+    
+    
+    
+}
+
+/* .circle{
+    height: 11px;
+    width: 11px;
+    border: 2px solid white;
+    border-radius: 15px;
+    background: white;
+    position: relative;
+    bottom: 6px;
+    left: 0%;
+    transition: left 0.8s;
+} */
+
+
+.song-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between time and slider */
+    width: 500px; /* Adjust based on your layout */
+    padding-left: 265px;
+    justify-content: center;
+}
+
+/* Current time and duration */
+.current-time, .total-duration {
+    font-size: 14px;
+    color: #ede9f0;
+}
+
+/* Slider container */
+.slider-container {
+    flex-grow: 1; /* Makes the slider take up remaining space */
+    position: relative;
+}
+
+/* Input range (slider) styling */
+.song-progress {
+    -webkit-appearance: none; /* Removes default styles */
+    width: 100%; /* Full width of the container */
+    height: 6px; /* Height of the slider track */
+    background: #333; /* Background of the slider */
+    border-radius: 5px; /* Rounded edges for the track */
+    outline: none; /* Removes focus outline */
+    cursor: pointer;
+}
+
+/* Slider thumb styling */
+.song-progress::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Removes default thumb style */
+    width: 12px;
+    height: 12px;
+    background: #f3f3f4;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(218, 182, 252, 0.8); /* Glow effect */
+}
+
+.song-progress::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #dab6fc;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(218, 182, 252, 0.8);
+}
+
+/* Add hover effect */
+.song-progress:hover::-webkit-slider-thumb {
+    transform: scale(1.2); /* Enlarges thumb on hover */
+}
