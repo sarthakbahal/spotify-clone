@@ -25,6 +25,7 @@ const playMusic = (track) =>{
     currsong.src = "/songs/" + track;
     currsong.play();
     play.src = "pause.svg";
+    document.querySelector(".sname").innerHTML = track;
 }
 
 

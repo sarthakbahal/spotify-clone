@@ -1,30 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Macondo+Swash+Caps&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: "Roboto", serif;
     font-style: normal;
-    
+
 }
 
 
-body{
+body {
     background-color: rgba(0, 0, 0, 0.805);
-    color: whitesmoke;  
+    color: whitesmoke;
     overflow-x: hidden;
 }
 
-.left{
+.left {
     width: 30vw;
 }
 
-.right{
+.right {
     width: 70vw;
     position: relative;
 }
 
-.home ul li{
+.home ul li {
     width: 30px;
     list-style: none;
     display: flex;
@@ -36,22 +36,22 @@ body{
     font-size: large;
 }
 
-.home .logo img{
+.home .logo img {
     width: 150px;
     margin: 20px;
 }
 
-.home ul{
+.home ul {
     margin: 10px 25px;
 }
 
-.home{
+.home {
     margin: 10px;
     padding: 3px;
 
 }
 
-.library{
+.library {
     margin: 10px;
     padding: 3px;
     min-height: 70vh;
@@ -60,8 +60,8 @@ body{
 
 }
 
-.heading{
-    
+.heading {
+
     margin: 10px;
     display: flex;
     margin: 8px;
@@ -71,18 +71,18 @@ body{
     font-weight: bold;
     font-size: medium;
     align-items: center;
-    padding : 6px 20px;
+    padding: 6px 20px;
 }
 
-.heading img{
+.heading img {
     width: 30px;
 }
 
-.heading h2{
+.heading h2 {
     width: 150px;
 }
 
-.footer{
+.footer {
     gap: 0px;
     display: flex;
     font-size: 11px;
@@ -90,15 +90,16 @@ body{
     bottom: 0;
     flex-wrap: wrap;
 }
-.footer a{
+
+.footer a {
     color: black;
     text-decoration: none;
     padding: 10px;
-    
+
 }
 
 
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     background-color: #bd92e513;
@@ -106,16 +107,16 @@ body{
     margin-bottom: 5px;
 }
 
-.header > *{
+.header>* {
     padding: 32px;
 }
 
-.playlist{
+.playlist {
     padding: 20px;
     margin-left: 40px;
 }
 
-.cardContainer{
+.cardContainer {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
@@ -123,7 +124,7 @@ body{
     max-height: 70vh;
 }
 
-.card{
+.card {
     width: 160px;
     padding: 15px;
     border-radius: 5px;
@@ -132,13 +133,13 @@ body{
     position: relative;
 }
 
-.card img{
+.card img {
     width: 100%;
     object-fit: contain;
     text-align: center;
 }
 
-.play{
+.play {
     position: absolute;
     right: 18px;
     top: 124px;
@@ -150,29 +151,35 @@ body{
 
 /* For webkit-based browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-  }
-  
+    width: 8px;
+    /* Width of the scrollbar */
+}
+
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, black, #dab6fc); /* Gradient thumb */
-    border-radius: 6px; /* Rounded corners */
+    background: linear-gradient(to bottom, black, #dab6fc);
+    /* Gradient thumb */
+    border-radius: 6px;
+    /* Rounded corners */
 }
-  
+
 ::-webkit-scrollbar-track {
-    background: linear-gradient(to bottom, #e9d9fd, #f0f0f0); /* Light background for the track */
-    border-radius: 6px; /* Rounded corners */
+    background: linear-gradient(to bottom, #e9d9fd, #f0f0f0);
+    /* Light background for the track */
+    border-radius: 6px;
+    /* Rounded corners */
 }
-  
-  /* Optional: Hover effect */
+
+/* Optional: Hover effect */
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #dab6fc, black); /* Invert the gradient on hover */
+    background: linear-gradient(to bottom, #dab6fc, black);
+    /* Invert the gradient on hover */
 }
-  
-.buttons > *{
+
+.buttons>* {
     margin: 0px 12px;
 }
 
-.signup{
+.signup {
     font-weight: bold;
     background-color: #1f1924;
     color: rgba(255, 255, 255, 0.679);
@@ -184,73 +191,73 @@ body{
     border-radius: 30px;
     width: 80px;
     padding: 10px;
-    
+
 }
 
-.signup:hover{
-    background-color: #bd92e53e ;
+.signup:hover {
+    background-color: #bd92e53e;
     color: #f0f0f0;
     font-size: 16px;
 }
 
-.login{
+.login {
     font-weight: bold;
     background-color: #bd92e513;
     color: rgba(255, 255, 255, 0.679);
-    
+
     border: none;
     outline: none;
     cursor: pointer;
     font-size: 15px;
-    
+
     width: 70px;
     padding: 10px;
     border-radius: 30px;
     background: #dab6fcb4;
-    
+
 }
 
-.login:hover{
-    background-color: #bd92e5d3 ;
+.login:hover {
+    background-color: #bd92e5d3;
     color: #f0f0f0;
     font-size: 16px;
 }
 
 
-.playbar{
+.playbar {
     position: absolute;
     bottom: 0;
     background: linear-gradient(to right, #c693f5, #b09dff);
-    
+
     width: 100%;
     padding: 20px;
 }
 
-.playbtn{
+.playbtn {
     display: flex;
     justify-content: center;
     gap: 10px;
     object-fit: contain;
 }
 
-.playbtn img{
+.playbtn img {
     width: 35px;
     object-fit: contain;
 }
 
-.listcard{
-   display: flex;
-   justify-content: space-between;
-   overflow-y: scroll;
-   max-height: 52vh;
-   max-width: 412px;
-   
-   
+.listcard {
+    display: flex;
+    justify-content: space-between;
+    overflow-y: scroll;
+    max-height: 52vh;
+    max-width: 412px;
+
+
 }
 
-.listcard ul{
-   margin-left: 10px;
-   
+.listcard ul {
+    margin-left: 10px;
+
 }
 
 .listcard ul li {
@@ -265,9 +272,9 @@ body{
     justify-content: space-between;
 }
 
-.listcard ul li:hover{
-    background-color: #b287db27 ;
-    
+.listcard ul li:hover {
+    background-color: #b287db27;
+
 
 }
 
@@ -275,27 +282,27 @@ body{
     width: 40px;
 }
 
-.playnow{
+.playnow {
     display: flex;
     margin-left: 20px;
     align-items: center;
     flex-shrink: 0;
-    background-color: #b287db69 ;
+    background-color: #b287db69;
     padding: 5px;
     padding-left: 13px;
     border-radius: 30px;
     cursor: pointer;
-    
+
     left: 240px;
 }
 
-.playnow:hover{
-    background-color: #bd92e5d3 ;
+.playnow:hover {
+    background-color: #bd92e5d3;
     color: #f0f0f0;
     font-size: 16px;
 }
 
-.info{
+.info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -303,25 +310,30 @@ body{
     overflow: hidden;
 }
 
-.info div{
-    max-width: 180px; /* Define a max width for the song name */
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
-    flex-grow: 1; /* Allow the name to take available space */
+.info div {
+    max-width: 180px;
+    /* Define a max width for the song name */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    overflow: hidden;
+    /* Hide overflowing text */
+    text-overflow: ellipsis;
+    /* Add ellipsis for overflowing text */
+    flex-grow: 1;
+    /* Allow the name to take available space */
 }
 
-.seekbar{
-   /* height: 2px;
+.seekbar {
+    /* height: 2px;
     width: 92%;
     border: 2px solid black;
     border-radius: 10px; */
     position: absolute;
     bottom: 8px;
     width: 92%;
-    
-    
-    
+
+
+
 }
 
 
@@ -330,44 +342,56 @@ body{
 .song-slider {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between time and slider */
-    width: 500px; /* Adjust based on your layout */
+    gap: 10px;
+    /* Space between time and slider */
+    width: 500px;
+    /* Adjust based on your layout */
     padding-left: 265px;
     justify-content: center;
 }
 
 /* Current time and duration */
-.current-time, .total-duration {
+.current-time,
+.total-duration {
     font-size: 14px;
     color: #ede9f0;
 }
 
 /* Slider container */
 .slider-container {
-    flex-grow: 1; /* Makes the slider take up remaining space */
+    flex-grow: 1;
+    /* Makes the slider take up remaining space */
     position: relative;
 }
 
 /* Input range (slider) styling */
 .song-progress {
-    -webkit-appearance: none; /* Removes default styles */
-    width: 100%; /* Full width of the container */
-    height: 6px; /* Height of the slider track */
-    background: #333; /* Background of the slider */
-    border-radius: 5px; /* Rounded edges for the track */
-    outline: none; /* Removes focus outline */
+    -webkit-appearance: none;
+    /* Removes default styles */
+    width: 100%;
+    /* Full width of the container */
+    height: 6px;
+    /* Height of the slider track */
+    background: #333;
+    /* Background of the slider */
+    border-radius: 5px;
+    /* Rounded edges for the track */
+    outline: none;
+    /* Removes focus outline */
     cursor: pointer;
 }
 
 /* Slider thumb styling */
 .song-progress::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Removes default thumb style */
+    -webkit-appearance: none;
+    /* Removes default thumb style */
     width: 12px;
     height: 12px;
     background: #f3f3f4;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 4px rgba(218, 182, 252, 0.8); /* Glow effect */
+    box-shadow: 0 0 4px rgba(218, 182, 252, 0.8);
+    /* Glow effect */
 }
 
 .song-progress::-moz-range-thumb {
@@ -381,9 +405,52 @@ body{
 
 /* Add hover effect */
 .song-progress:hover::-webkit-slider-thumb {
-    transform: scale(1.2); /* Enlarges thumb on hover */
+    transform: scale(1.2);
+    /* Enlarges thumb on hover */
 }
 
-.playbtn img{
+.playbtn img {
     cursor: pointer;
+}
+
+.songinfo img {
+    width: 50px;
+}
+
+.abvbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.volume {
+    margin-right: 123px;
+}
+
+.playbtn {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.songinfo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 210px;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.sname {
+    max-width: 150px;
+    /* Define a max width for the song name */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    overflow: hidden;
+    /* Hide overflowing text */
+    text-overflow: ellipsis;
+    /* Add ellipsis for overflowing text */
+    flex-grow: 1;
 }
