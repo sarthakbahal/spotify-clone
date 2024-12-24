@@ -30,16 +30,23 @@ function formatTime(seconds) {
 }
 
 
-const playMusic = (track) =>{
+const playMusic = (track, pause = false) =>{
     currsong.src = "/songs/" + track;
+    
+    if(!pause){
+        currsong.play();
+    }
+    
     currsong.play();
+
     play.src = "pause.svg";
-    document.querySelector(".sname").innerHTML = track;
+    document.querySelector(".sname").innerHTML = decodeURI(track);
 }
 
 
 async function main() {
     let songs1 = await getsongs();
+    playMusic(songs1[0], true);
     
     let songUl = document.querySelector(".listcard").getElementsByTagName("ul")[0];
     for (let song of songs1) {
