@@ -1,4 +1,7 @@
 let currsong = new Audio();
+let slider = document.querySelector(".song-progress");
+let currentTimeElem = document.querySelector(".current-time");
+let totalDurationElem = document.querySelector(".total-duration");
 console.log(currsong);
 async function getsongs() {
     let x = await fetch("http://127.0.0.1:5500/songs/")
@@ -18,6 +21,12 @@ async function getsongs() {
     }
     return songs;
 
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? "0" + secs : secs}`;
 }
 
 
@@ -57,6 +66,7 @@ async function main() {
             console.log(e.querySelector(".info").firstElementChild.innerHTML);
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
             
+            
         })
         
     })
@@ -73,10 +83,34 @@ async function main() {
         }
     })
 
+    volumeslider.addEventListener("input", () => {
+        currsong.volume = volumeslider.value;
+        
+    });
 
+    currsong.addEventListener("timeupdate", ()=>{
+        let totalDuration = currsong.duration;
+        slider.value = (currsong.currentTime / currsong.duration) * 100 || 0;
+        currentTimeElem.textContent = formatTime(currsong.currentTime);
+        
+    });
+
+    currsong.addEventListener('loadedmetadata', () => {
+        totalDurationElem.textContent = formatTime(currsong.duration);
+    });
+
+    currsong.addEventListener('emptied', () => {
+        currentTimeElem.textContent = "0:00";
+        totalDurationElem.textContent = "0:00";
+        slider.value = 0;
+    });
+
+    
+    
 }
 
 main();   
+
 
 
 
@@ -86,7 +120,7 @@ main();
     const currentTimeElem = document.querySelector(".current-time");
     const totalDurationElem = document.querySelector(".total-duration");
 
-    const totalDuration = 270; // Total duration in seconds (4:30)
+     // Total duration in seconds (4:30)
 
     // Format seconds into mm:ss
     function formatTime(seconds) {

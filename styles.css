@@ -454,3 +454,14 @@ body {
     /* Add ellipsis for overflowing text */
     flex-grow: 1;
 }
+
+.volume{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-right: 80px;
+}
+
+.volume img{
+    width: 20px;
+}
