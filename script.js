@@ -105,6 +105,11 @@ async function main() {
         slider.value = 0;
     });
 
+    slider.addEventListener('input', ()=> {
+        const seektime = (slider.value/100) * currsong.duration;
+        currsong.currentTime = seektime;
+    });
+
     
     
 }
