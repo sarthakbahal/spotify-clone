@@ -111,6 +111,13 @@ body {
     padding: 32px;
 }
 
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
 .playlist {
     padding: 20px;
     margin-left: 40px;
@@ -229,7 +236,7 @@ body {
     bottom: 0;
     background: linear-gradient(to right, #c693f5, #b09dff);
 
-    width: 100%;
+    width: 96%;
     padding: 20px;
 }
 
@@ -459,9 +466,43 @@ body {
     display: flex;
     align-items: center;
     gap: 3px;
-    margin-right: 80px;
+    margin-right: 25px;
 }
 
 .volume img{
     width: 20px;
+}
+
+.hamburger{
+    display: none;
+    width: 64px;
+    height: 50px;
+}
+
+@media (max-width: 1360px) {
+    .left{
+        background-color: red;
+        position: absolute;
+        left: -100%;
+        transition: all 0.5s;
+        z-index: 1;
+        width: 300px;
+
+
+    }
+
+    .right{
+        width: 100vw;
+        min-height: 65vw;
+        
+        
+    }
+
+    .hamburger{
+        display: inline;
+        
+    }
+
+   
+
 }
