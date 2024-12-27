@@ -1,4 +1,5 @@
 let currsong = new Audio();
+let songs1;
 let slider = document.querySelector(".song-progress");
 let currentTimeElem = document.querySelector(".current-time");
 let totalDurationElem = document.querySelector(".total-duration");
@@ -45,7 +46,7 @@ const playMusic = (track, pause = false) =>{
 
 
 async function main() {
-    let songs1 = await getsongs();
+    songs1 = await getsongs();
     playMusic(songs1[0], true);
     
     let songUl = document.querySelector(".listcard").getElementsByTagName("ul")[0];
@@ -127,6 +128,37 @@ async function main() {
         document.querySelector(".left").style.left = "-100%";
     })
     
+    
+
+
+    prev.addEventListener("click", () =>{
+       
+
+        let index = songs1.indexOf(currsong.src.split("/").slice(-1)[0]);
+        if((index-1) >= 0){
+            playMusic(songs1[index-1]);
+        }
+    })
+
+    
+    next.addEventListener("click", () =>{
+       
+
+        let index = songs1.indexOf(currsong.src.split("/").slice(-1)[0]);
+        if((index+1) < songs1.length){
+           
+            playMusic(songs1[index+1]);
+           
+            
+        }
+
+
+    })
+
+
+
+
+
 }
 
 main();   
@@ -135,35 +167,3 @@ main();
 
 
 
-/* document.addEventListener("DOMContentLoaded", () => {
-    const slider = document.querySelector(".song-progress");
-    const currentTimeElem = document.querySelector(".current-time");
-    const totalDurationElem = document.querySelector(".total-duration");
-
-     // Total duration in seconds (4:30)
-
-    // Format seconds into mm:ss
-    function formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${minutes}:${secs < 10 ? "0" + secs : secs}`;
-    }
-
-    // Set total duration text
-    totalDurationElem.textContent = formatTime(totalDuration);
-
-    // Update current time and slider position
-    slider.addEventListener("input", (e) => {
-        const currentTime = (slider.value / 100) * totalDuration;
-        currentTimeElem.textContent = formatTime(currentTime);
-    });
-
-    // Simulate song progress
-    setInterval(() => {
-        if (slider.value < 100) {
-            slider.value = parseFloat(slider.value) + 1;
-            const currentTime = (slider.value / 100) * totalDuration;
-            currentTimeElem.textContent = formatTime(currentTime);
-        }
-    }, (totalDuration * 10)); // Adjust speed for demo purposes
-}); */
