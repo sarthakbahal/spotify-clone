@@ -1,56 +1,36 @@
 let currsong = new Audio();
-let songs1;
+
+let songs;
+let currfolder ;
 let slider = document.querySelector(".song-progress");
 let currentTimeElem = document.querySelector(".current-time");
 let totalDurationElem = document.querySelector(".total-duration");
-console.log(currsong);
-async function getsongs() {
-    let x = await fetch("http://127.0.0.1:5500/songs/")
+
+
+
+async function getsongs(folder) {
+    currfolder = folder;
+    let x = await fetch(`http://127.0.0.1:5500/${folder}/`)
     let response = await x.text();
     let div = document.createElement("div");
     div.innerHTML = response;
     let as = div.getElementsByTagName("a");
-    let songs = [];
+    songs = [];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1]);
+            songs.push(element.href.split(`/${folder}/`)[1]);
             
             
         }
 
     }
-    return songs;
-
-}
-
-function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${minutes}:${secs < 10 ? "0" + secs : secs}`;
-}
-
-
-const playMusic = (track, pause = false) =>{
-    currsong.src = "/songs/" + track;
     
-    if(!pause){
-        currsong.play();
-    }
+
     
-    currsong.play();
-
-    play.src = "pause.svg";
-    document.querySelector(".sname").innerHTML = decodeURI(track);
-}
-
-
-async function main() {
-    songs1 = await getsongs();
-    playMusic(songs1[0], true);
     
     let songUl = document.querySelector(".listcard").getElementsByTagName("ul")[0];
-    for (let song of songs1) {
+    for (let song of songs) {
         
         songUl.innerHTML = songUl.innerHTML + `<li>
                             <img src="music.svg" alt="music">
@@ -78,6 +58,38 @@ async function main() {
         })
         
     })
+
+
+    
+
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? "0" + secs : secs}`;
+}
+
+
+const playMusic = (track, pause = false) =>{
+    currsong.src = `/${currfolder}/` + track;
+    
+    if(!pause){
+        currsong.play();
+    }
+    
+    currsong.play();
+
+    play.src = "pause.svg";
+    document.querySelector(".sname").innerHTML = decodeURI(track);
+}
+
+
+async function main() {
+   
+    await getsongs("songs/ncs");
+    playMusic(songs[0], true);
+
 
     play.addEventListener("click", ()=> {
        
@@ -134,9 +146,9 @@ async function main() {
     prev.addEventListener("click", () =>{
        
 
-        let index = songs1.indexOf(currsong.src.split("/").slice(-1)[0]);
+        let index = songs.indexOf(currsong.src.split("/").slice(-1)[0]);
         if((index-1) >= 0){
-            playMusic(songs1[index-1]);
+            playMusic(songs[index-1]);
         }
     })
 
@@ -144,15 +156,21 @@ async function main() {
     next.addEventListener("click", () =>{
        
 
-        let index = songs1.indexOf(currsong.src.split("/").slice(-1)[0]);
-        if((index+1) < songs1.length){
+        let index = songs.indexOf(currsong.src.split("/").slice(-1)[0]);
+        if((index+1) < songs.length){
            
-            playMusic(songs1[index+1]);
+            playMusic(songs[index+1]);
            
             
         }
 
 
+    })
+
+    Array.from(document.getElementsByClassName("card")).forEach(e=>{
+        e.addEventListener("click", async item=> {
+            songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`)
+        })
     })
 
 

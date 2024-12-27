@@ -541,6 +541,7 @@ body {
 
     .hamburger{
         display: inline;
+        cursor: pointer;
         
     }
 
@@ -549,6 +550,7 @@ body {
         right: 30px;
         top: 30px;
         display: block;
+        cursor: pointer;
     }
 
     .cardContainer{
@@ -571,5 +573,10 @@ body {
         
     }
    
+    .listcard{
+        max-height: 59vh;
+    }
+
 
 }
+
