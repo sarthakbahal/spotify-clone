@@ -90,7 +90,7 @@ body {
 .footer {
     gap: 0px;
     display: flex;
-    font-size: 11px;
+    font-size: 14px;
     position: absolute;
     bottom: 0;
     flex-wrap: wrap;
@@ -292,7 +292,7 @@ body {
     
     
     overflow-y: scroll;
-    max-height: 52vh;
+    max-height: 55vh;
     
 
 
