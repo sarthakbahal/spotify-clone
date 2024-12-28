@@ -10,7 +10,7 @@ let totalDurationElem = document.querySelector(".total-duration");
 
 async function getsongs(folder) {
     currfolder = folder;
-    let x = await fetch(`http://127.0.0.1:5500/${folder}/`)
+    let x = await fetch(`/${folder}/`)
     let response = await x.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -66,13 +66,13 @@ async function getsongs(folder) {
 }
 
 async function album() {
-    let a = await fetch(`http://127.0.0.1:5500/songs/`)
+    let a = await fetch(`/songs/`)
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
     console.log(div)
     
-    let anchors = div.getElementsByClassName("icon");
+    let anchors = div.getElementsByTagName("a");
     console.log(anchors)
     let cardCont = document.querySelector(".cardContainer");
     let array = Array.from(anchors);
@@ -81,12 +81,13 @@ async function album() {
     for (let index = 0; index < array.length; index++) {      const element = array[index];
         
         const e = array[index];
+        console.log(e);
        
         if(e.href.includes("/songs")){
             console.log(e.href)
             let folder = e.href.split("/").slice(-1)[0];
 
-            let b = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`)
+            let b = await fetch(`/songs/${folder}/info.json`)
             let response = await b.json();
 
             cardCont.innerHTML = cardCont.innerHTML + ` <div data-folder="${folder}" class="card">
