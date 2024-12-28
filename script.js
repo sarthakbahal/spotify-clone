@@ -34,14 +34,14 @@ async function getsongs(folder) {
     for (let song of songs) {
         
         songUl.innerHTML = songUl.innerHTML + `<li>
-                            <img src="music.svg" alt="music">
+                            <img src="img/music.svg" alt="music">
                             <div class="info">
                                 <div>${song.replaceAll("%20"," ")}</div>
                                 <div>Artist Name</div>
                             </div>
                             <div class="playnow">
                                 Play now
-                                <img src="play.svg" alt="play">
+                                <img src="img/play.svg" alt="play">
                             </div>
                         </li>`;
     }
@@ -61,7 +61,7 @@ async function getsongs(folder) {
     })
 
 
-    
+    return songs;
 
 }
 
@@ -89,7 +89,7 @@ async function album() {
             let b = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`)
             let response = await b.json();
 
-            cardCont.innerHTML = cardCont.innerHTML + ` <div data-folder="ncs" class="card">
+            cardCont.innerHTML = cardCont.innerHTML + ` <div data-folder="${folder}" class="card">
                         <div class="play">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="48" viewBox="0 0 48 48">
                                 <!-- Circle with full color -->
@@ -127,7 +127,7 @@ const playMusic = (track, pause = false) =>{
     
     currsong.play();
 
-    play.src = "pause.svg";
+    play.src = "img/pause.svg";
     document.querySelector(".sname").innerHTML = decodeURI(track);
 }
 
@@ -145,10 +145,10 @@ async function main() {
        
         if (currsong.paused) {
             currsong.play();
-            play.src = "pause.svg";
+            play.src = "img/pause.svg";
         }else{
             currsong.pause();
-            play.src = "play.svg";
+            play.src = "img/play.svg";
 
         }
     })
@@ -221,6 +221,7 @@ async function main() {
     Array.from(document.getElementsByClassName("card")).forEach(e=>{
         e.addEventListener("click", async item=> {
             songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`)
+            playMusic(songs[0])
         })
     })
 
@@ -231,11 +232,11 @@ async function main() {
             sv = volumeslider.value;
             currsong.volume = 0;
             volumeslider.value = 0;
-            vol.src = "mute.svg"
+            vol.src = "img/mute.svg"
         }else{
             volumeslider.value = sv;
             currsong.volume = volumeslider.value;
-            vol.src = "vol.svg"
+            vol.src = "img/vol.svg"
         }
     })
 
