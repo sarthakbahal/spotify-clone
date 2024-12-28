@@ -30,6 +30,7 @@ async function getsongs(folder) {
     
     
     let songUl = document.querySelector(".listcard").getElementsByTagName("ul")[0];
+    songUl.innerHTML = "";
     for (let song of songs) {
         
         songUl.innerHTML = songUl.innerHTML + `<li>
@@ -64,6 +65,52 @@ async function getsongs(folder) {
 
 }
 
+async function album() {
+    let a = await fetch(`http://127.0.0.1:5500/songs/`)
+    let response = await a.text();
+    let div = document.createElement("div");
+    div.innerHTML = response;
+    console.log(div)
+    
+    let anchors = div.getElementsByClassName("icon");
+    console.log(anchors)
+    let cardCont = document.querySelector(".cardContainer");
+    let array = Array.from(anchors);
+
+    
+    for (let index = 0; index < array.length; index++) {      const element = array[index];
+        
+        const e = array[index];
+       
+        if(e.href.includes("/songs")){
+            console.log(e.href)
+            let folder = e.href.split("/").slice(-1)[0];
+
+            let b = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`)
+            let response = await b.json();
+
+            cardCont.innerHTML = cardCont.innerHTML + ` <div data-folder="ncs" class="card">
+                        <div class="play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="48" viewBox="0 0 48 48">
+                                <!-- Circle with full color -->
+                                <circle cx="24" cy="24" r="24" fill="#dab6fc" />
+                                <!-- Smaller and Centered Triangle -->
+                                <path d="M20 16v16a1 1 0 0 0 1.524 .852l12 -8a1 1 0 0 0 0 -1.704l-12 -8a1 1 0 0 0 -1.524 .852z" fill="black" />
+                            </svg>
+                              
+                        </div>
+                        <img src= "/songs/${folder}/cover.jpg" alt="cover photo of album">
+
+                        <h2>${response.title}</h2>
+                        <p>${response.desc}</p>
+                    </div>`
+        }
+    } 
+
+ 
+}
+
+
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
@@ -84,9 +131,12 @@ const playMusic = (track, pause = false) =>{
     document.querySelector(".sname").innerHTML = decodeURI(track);
 }
 
+let sv = volumeslider.value; 
 
 async function main() {
    
+    await album();
+
     await getsongs("songs/ncs");
     playMusic(songs[0], true);
 
@@ -108,6 +158,7 @@ async function main() {
         
     });
 
+    
     currsong.addEventListener("timeupdate", ()=>{
         let totalDuration = currsong.duration;
         slider.value = (currsong.currentTime / currsong.duration) * 100 || 0;
@@ -173,6 +224,20 @@ async function main() {
         })
     })
 
+    
+
+    vol.addEventListener("click", () =>{
+        if(currsong.volume != 0){
+            sv = volumeslider.value;
+            currsong.volume = 0;
+            volumeslider.value = 0;
+            vol.src = "mute.svg"
+        }else{
+            volumeslider.value = sv;
+            currsong.volume = volumeslider.value;
+            vol.src = "vol.svg"
+        }
+    })
 
    
 

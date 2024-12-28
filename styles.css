@@ -17,6 +17,7 @@ body {
     background-color: rgba(0, 0, 0, 0.805);
     color: whitesmoke;
     overflow-x: hidden;
+    
 }
 
 .left {
@@ -58,7 +59,7 @@ body {
 .library {
     margin: 10px;
     padding: 3px;
-    min-height: 70vh;
+    min-height: 72vh;
     position: relative;
     margin-bottom: 0;
 
@@ -123,20 +124,24 @@ body {
 }
 
 .playlist {
-    padding: 20px;
+    
     
 }
 
 .playlist h1{
-    padding: 15px;
+    padding-top: 15px;
+    padding-left: 20px;
 }
 
 .cardContainer {
     display: flex;
-    gap: 15px;
+    gap: 25px;
     flex-wrap: wrap;
     overflow-y: auto;
     max-height: 70vh;
+
+    margin: 30px;
+    
 }
 
 .card {
@@ -144,11 +149,15 @@ body {
     padding: 15px;
     border-radius: 5px;
     background-color: rgba(181, 181, 181, 0.536);
-    margin: 15px 8px;
+    
     position: relative;
     transition: all .7s;
    text-align: center;
    font-weight: 500;
+
+   display: flex;
+   flex-direction: column;
+   flex-grow: 0.08;
 
 }
 
@@ -560,7 +569,7 @@ body {
     .card{
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
+        flex-grow: 0.15;
     }
 
     .playbar{
