@@ -107,6 +107,16 @@ async function album() {
         }
     } 
 
+    
+
+    Array.from(document.getElementsByClassName("card")).forEach(e=>{
+        e.addEventListener("click", async item=> {
+            songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`)
+            playMusic(songs[0])
+        })
+    })
+
+
  
 }
 
@@ -137,7 +147,7 @@ async function main() {
    
     await album();
 
-    await getsongs("songs/ncs");
+    await getsongs("songs/cs");
     playMusic(songs[0], true);
 
 
@@ -218,12 +228,7 @@ async function main() {
 
     })
 
-    Array.from(document.getElementsByClassName("card")).forEach(e=>{
-        e.addEventListener("click", async item=> {
-            songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`)
-            playMusic(songs[0])
-        })
-    })
+   
 
     
 
@@ -241,7 +246,7 @@ async function main() {
     })
 
    
-
+    
 
 
 
